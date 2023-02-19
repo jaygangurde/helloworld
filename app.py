@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request , render_template 
 
 app = Flask(__name__)
 
@@ -13,9 +13,10 @@ def hello():
         return 'Namastey sansar'
     else:
         return 'Language not supported'
+    
 @app.route('/')
 def hi():
-    return 'Hello'
+    return render_template("index.html")
 
 
 if __name__ == '__main__':
